@@ -4,46 +4,54 @@ This package shows date time or human readable time. You can adjust the exact ti
 
 Human readable time example:
 
-```php+HTML
-<?php
-		$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(15);
-?>
+```php
+$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(15);
 
 <x:human-readable-time :datetime="$datetime" />
+```
 
+Output:
+
+```html
 <!-- Output -->
-
 <time datetime="2021-05-05 10:15:00">15 minutes before</time>
 ```
 
 Date time example:
 
-```php+HTML
-<?php
-		$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(90);
-?>
+```php
+$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(90);
 
 <x:human-readable-time :datetime="$datetime" />
+```
 
+Output:
+
+```html
 <!-- Output -->
-
 <time datetime="2021-05-05 09:00:00">2021-05-05 09:00:00</time>
 ```
 
 You can adjust the time when the date time is displayed. The default time is 1 hour.
 
 
-```php+HTML
-<?php
-		$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(120);
-?>
+```php
+$datetime = \Carbon\Carbon::parse('2021-05-05 10:30:00')->subMinutes(120);
 
 <x:human-readable-time :datetime="$datetime" human-until="-3 hours" />
+```
 
+Output:
+
+```html
 <!-- Output -->
-
 <time datetime="2021-05-05 09:00:00">2 hour before</time>
 ```
+
+## Requirements
+
+- Laravel > 7.1 or Laravel 8.x
+- PHP > 7.4 or PHP 8.x
 
 ## Installation
 
