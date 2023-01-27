@@ -1,1 +1,0 @@
-<x:human-readable-time :datetime="$datetime" :format="$format" />
