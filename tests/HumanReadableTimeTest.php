@@ -1,7 +1,7 @@
 <?php
 
 use function Spatie\PestPluginTestTime\testTime;
-use function Spatie\Snapshots\assertMatchesSnapshot;
+use function Spatie\Snapshots\assertMatchesHtmlSnapshot;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Blade;
 
@@ -12,7 +12,7 @@ it('can render human readable time', function () {
 
     $html = Blade::render('<x:human-readable-time :datetime="$datetime" />', compact('datetime'));
 
-    assertMatchesSnapshot($html);
+    assertMatchesHtmlSnapshot($html);
 });
 
 it('can render time', function () {
@@ -22,7 +22,7 @@ it('can render time', function () {
 
     $html = Blade::render('<x:human-readable-time :datetime="$datetime" />', compact('datetime'));
 
-    assertMatchesSnapshot($html);
+    assertMatchesHtmlSnapshot($html);
 });
 
 it('can render time with custom format', function () {
@@ -34,5 +34,5 @@ it('can render time with custom format', function () {
 
     $html = Blade::render('<x:human-readable-time :datetime="$datetime" :format="$format" />', compact('datetime', 'format'));
 
-    assertMatchesSnapshot($html);
+    assertMatchesHtmlSnapshot($html);
 });
