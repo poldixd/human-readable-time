@@ -10,10 +10,12 @@ jobs:
         strategy:
             fail-fast: true
             matrix:
-                php: [8.0, 8.1]
-                laravel: [9.*]
-                dependency-version: [prefer-lowest, prefer-stable]
+                php: [8.1, 8.2]
+                laravel: [10.*, 9.*]
+                dependency-version: [prefer-stable]
                 include:
+                    -   laravel: 10.*
+                        testbench: 8.*
                     -   laravel: 9.*
                         testbench: 7.*
 
@@ -21,12 +23,7 @@ jobs:
 
         steps:
             -   name: Checkout code
-                uses: actions/checkout@v1
-
-            -   name: Install SQLite 3
-                run: |
-                    sudo apt-get update
-                    sudo apt-get install sqlite3
+                uses: actions/checkout@v3
 
             -   name: Cache dependencies
                 uses: actions/cache@v1
@@ -44,7 +41,7 @@ jobs:
             -   name: Install dependencies
                 run: |
                     composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-                    composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
+                    composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
             -   name: Execute tests
-                run: vendor/bin/phpunit
+                run: vendor/bin/pest

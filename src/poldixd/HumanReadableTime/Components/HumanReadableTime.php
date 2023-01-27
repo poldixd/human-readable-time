@@ -4,6 +4,7 @@ namespace poldixd\HumanReadableTime\Components;
 
 use Illuminate\View\Component;
 use Carbon\Carbon;
+use DateTime;
 
 class HumanReadableTime extends Component
 {
@@ -12,7 +13,7 @@ class HumanReadableTime extends Component
     public string $format;
     public string $output;
 
-    public function __construct($datetime, string $humanUntil = '-1 hour', string $format = 'Y-m-d H:i:s')
+    public function __construct(Datetime $datetime, string $humanUntil = '-1 hour', string $format = 'Y-m-d H:i:s')
     {
         $this->datetime = $datetime;
         $this->humanUntil = $humanUntil;

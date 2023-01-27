@@ -2,11 +2,14 @@
 
 namespace Tests;
 
-use poldixd\HumanReadableTime\Providers\HumanReadableTimeServiceProvider;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use poldixd\HumanReadableTime\Providers\HumanReadableTimeServiceProvider;
 
 class TestCase extends BaseTestCase
 {
+    use InteractsWithViews;
+
     protected function getPackageProviders($app)
     {
         return [
@@ -17,10 +20,5 @@ class TestCase extends BaseTestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('app.locale', 'de');
-
-        $app['config']->set('view.paths', [
-            __DIR__ . '/views',
-            resource_path('views'),
-        ]);
     }
 }
