@@ -50,8 +50,8 @@ Output:
 
 ## Requirements
 
-- Laravel > 7.1 or Laravel 8.x
-- PHP > 7.4 or PHP 8.x
+- Laravel 9.x or Laravel 10.x
+- PHP 8.x
 
 ## Installation
 
