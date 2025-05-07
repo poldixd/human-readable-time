@@ -14,9 +14,7 @@
     "require-dev": {
         "orchestra/testbench": "^9.0|^10.0",
         "pestphp/pest": "^3.0",
-        "pestphp/pest-plugin-laravel": "^3.0",
-        "spatie/pest-plugin-snapshots": "^3.0",
-        "spatie/pest-plugin-test-time": "^3.0"
+        "pestphp/pest-plugin-laravel": "^3.0"
     },
     "autoload": {
         "psr-4": {
