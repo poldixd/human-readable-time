@@ -8,7 +8,7 @@ use poldixd\HumanReadableTime\Components\HumanReadableTime;
 
 class HumanReadableTimeServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         Blade::component('human-readable-time', HumanReadableTime::class);
     }
