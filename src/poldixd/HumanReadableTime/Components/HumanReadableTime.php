@@ -24,7 +24,7 @@ class HumanReadableTime extends Component
             : $datetime->diffForHumans(now());
     }
 
-    public function render()
+    public function render(): string
     {
         return <<<'blade'
             <time {{ $attributes->merge(['datetime' => $datetime->toDateTimeString()]) }}>{{ $output }}</time>
