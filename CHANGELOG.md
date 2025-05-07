@@ -2,6 +2,11 @@
 
 All notable changes to `human-readable-time` will be documented in this file
 
+## 1.3.0 - 2022-04-03
+
+- Added Laravel 12 Support
+- Removed Laravel 10 Support
+
 ## 1.2.0 - 2022-04-03
 
 - Added Laravel 11 Support
