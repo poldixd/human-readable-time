@@ -2,6 +2,11 @@
 
 All notable changes to `human-readable-time` will be documented in this file
 
+## 1.4.0 - 2026-02-20
+
+- Added Laravel 13 Support
+- Updated `pestphp/pest` to 4.x
+
 ## 1.3.0 - 2025-05-07
 
 - Added Laravel 12 Support
